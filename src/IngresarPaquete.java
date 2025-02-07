@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.*;
@@ -30,6 +31,21 @@ public class IngresarPaquete {
                 if (validarCampos()) {
                     registrarPaquete();
                 }
+            }
+        });
+        btnRegresar.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame loginFrame = (JFrame) SwingUtilities.getWindowAncestor(VentanaIngresarPaquete);
+                loginFrame.dispose();
+
+                JFrame ventasFrame = new JFrame("Ventana Ingresar Empleado");
+                ventasFrame.setContentPane(new InicioAdministrador().VentanaOpcionesAdmin);
+                ventasFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                ventasFrame.setSize(600, 600);
+                ventasFrame.setPreferredSize(new Dimension(300, 300));
+                ventasFrame.pack();
+                ventasFrame.setVisible(true);
             }
         });
     }
