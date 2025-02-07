@@ -11,7 +11,5 @@ public class Main {
         loginFrame.setPreferredSize(new Dimension(300, 300));
         loginFrame.pack();
         loginFrame.setVisible(true);
-        /* MetodosCrud mC = new  MetodosCrud();
-        mC.insertUser(1716373939,"Jakeline Taco", "jtaco@epn.edu.ec","Jtaco",3,"23");*/
     }
 }
