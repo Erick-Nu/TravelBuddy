@@ -55,9 +55,9 @@ public class Login {
                             case "ADMINISTRADOR":
                                 System.out.println("ADMINISTRADOR");
                                 JFrame login = (JFrame) SwingUtilities.getWindowAncestor(VentanaLogin);
-                                loginFrame.dispose();
+                                login.dispose();
 
-                                JFrame loginVenta = new JFrame("Ventana Ingresar Empleado");
+                                JFrame loginVenta = new JFrame("Ventana Administrador");
                                 loginVenta.setContentPane(new InicioAdministrador().VentanaOpcionesAdmin);
                                 loginVenta.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                                 loginVenta.setSize(600, 600);
@@ -67,6 +67,16 @@ public class Login {
                                 break;
                             case "EMPLEADO":
                                 System.out.println("EMPLEADO");
+                                JFrame empleado = (JFrame) SwingUtilities.getWindowAncestor(VentanaLogin);
+                                empleado.dispose();
+
+                                JFrame inicioEmpleado = new JFrame("Ventana Empleado");
+                                inicioEmpleado.setContentPane(new InicioEmpleado().VentanaOpcionesEmpleado);
+                                inicioEmpleado.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                                inicioEmpleado.setSize(600, 600);
+                                inicioEmpleado.setPreferredSize(new Dimension(300, 300));
+                                inicioEmpleado.pack();
+                                inicioEmpleado.setVisible(true);
                                 break;
                             case "CLIENTE":
                                 String queryIdCliente = "SELECT id FROM clientes WHERE email=? AND cedula=?";
