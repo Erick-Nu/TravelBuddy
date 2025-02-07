@@ -9,6 +9,7 @@ public class InicioAdministrador {
     private JButton btnVenta;
     private JButton btnCliente;
     public JPanel VentanaOpcionesAdmin;
+    private JButton btnPaquetes;
 
     public InicioAdministrador() {
         btnEmpleado.addActionListener(new ActionListener() {
@@ -66,6 +67,21 @@ public class InicioAdministrador {
 
                 JFrame ventasFrame = new JFrame("Ventana Ingresar Empleado");
                 ventasFrame.setContentPane(new IngresarCliente().VentanaIngresoCliente);
+                ventasFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                ventasFrame.setSize(600, 600);
+                ventasFrame.setPreferredSize(new Dimension(300, 300));
+                ventasFrame.pack();
+                ventasFrame.setVisible(true);
+            }
+        });
+        btnPaquetes.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame loginFrame = (JFrame) SwingUtilities.getWindowAncestor(VentanaOpcionesAdmin);
+                loginFrame.dispose();
+
+                JFrame ventasFrame = new JFrame("Ventana Ingresar Empleado");
+                ventasFrame.setContentPane(new IngresarPaquete().VentanaIngresarPaquete);
                 ventasFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 ventasFrame.setSize(600, 600);
                 ventasFrame.setPreferredSize(new Dimension(300, 300));
