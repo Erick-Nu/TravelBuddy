@@ -45,7 +45,32 @@ public class InicioAdministrador {
         btnVenta.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                JFrame loginFrame = (JFrame) SwingUtilities.getWindowAncestor(VentanaOpcionesAdmin);
+                loginFrame.dispose();
 
+                JFrame ventasFrame = new JFrame("Ventana Ingresar Empleado");
+                ventasFrame.setContentPane(new RegistrarVenta().VentanaRegistrarVenta);
+                ventasFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                ventasFrame.setSize(600, 600);
+                ventasFrame.setPreferredSize(new Dimension(300, 300));
+                ventasFrame.pack();
+                ventasFrame.setVisible(true);
+
+            }
+        });
+        btnCliente.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame loginFrame = (JFrame) SwingUtilities.getWindowAncestor(VentanaOpcionesAdmin);
+                loginFrame.dispose();
+
+                JFrame ventasFrame = new JFrame("Ventana Ingresar Empleado");
+                ventasFrame.setContentPane(new IngresarCliente().VentanaIngresoCliente);
+                ventasFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                ventasFrame.setSize(600, 600);
+                ventasFrame.setPreferredSize(new Dimension(300, 300));
+                ventasFrame.pack();
+                ventasFrame.setVisible(true);
             }
         });
     }
